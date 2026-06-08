@@ -1,0 +1,22 @@
+//
+loadLib("libs/laya.core.js");
+//
+loadLib("libs/laya.d3.js");
+//
+loadLib("libs/laya.opengl_2D.js");
+//
+loadLib("libs/laya.opengl_3D.js");
+//
+loadLib("libs/laya.ui2.js");
+//
+loadLib("libs/laya.adapter-native.js");
+//
+
+//
+loadLib("js/bundle.js");
+//
+loadLib("js/index.js");
+
+window.$DLL_PATHS = {
+    //
+};

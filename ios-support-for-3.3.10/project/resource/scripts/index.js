@@ -128,9 +128,9 @@ function getBaseUrl(url) {
 }
 window.loadConchUrl = loadApp;
 var enableDcc2 = true;
-var appUrl = 'http://layabox.com/layanative3.0/demo/index.js';
-var dccHead = '';
-var dccUrl = null;
+var appUrl = "http://stand.alone.version/index.js"
+var dccHead = ""
+var dccUrl = ""
 var mapToDCC = null;
 if (enableDcc2) {
     let layadcc = require('layadcc.js').layadcc;
