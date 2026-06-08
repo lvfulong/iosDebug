@@ -1,6 +1,6 @@
 #import "ViewController.h"
 #import <CoreTelephony/CTCellularData.h>
-#import "Reachability/Reachability.h"
+#import "NewReachability/NewReachability.h"
 
 @implementation ViewController
 {
@@ -8,7 +8,7 @@
     CADisplayLink* _displayLink;
     conchRuntime* _conchRuntime;
     CTCellularData *_cellularData;
-    LayaReachability *_pNetworkListener;
+    NewReachability *_pNetworkListener;
     bool _isInit;
 }
 //------------------------------------------------------------------------------
@@ -18,8 +18,8 @@
     if( self != nil )
     {
         _frame = frame;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkStateChange) name:LayakReachabilityChangedNotification object:nil];
-        _pNetworkListener = [LayaReachability reachabilityForInternetConnection];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkStateChange) name:NewLayakReachabilityChangedNotification object:nil];
+        _pNetworkListener = [NewReachability reachabilityForInternetConnection];
         [_pNetworkListener startNotifier];
         _isInit = false;
         return self;
@@ -36,7 +36,7 @@
     self.view = [_conchRuntime getView];
     
     _cellularData = [[CTCellularData alloc] init];
-    if (_cellularData.restrictedState == kCTCellularDataNotRestricted || _pNetworkListener.currentReachabilityStatus != NotReachable) {
+    if (_cellularData.restrictedState == kCTCellularDataNotRestricted || _pNetworkListener.currentReachabilityStatus != NewNotReachable) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self initConch];
         });
@@ -56,7 +56,7 @@
         _displayLink = nil;
         [_conchRuntime destroy];
         _conchRuntime = nil;
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:LayakReachabilityChangedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:NewLayakReachabilityChangedNotification object:nil];
         [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
     }
@@ -154,8 +154,8 @@
 }
 - (void)networkStateChange
 {
-    LayaNetworkStatus networkStatus = _pNetworkListener.currentReachabilityStatus;
-    if (networkStatus != NotReachable) {
+    NewLayaNetworkStatus networkStatus = _pNetworkListener.currentReachabilityStatus;
+    if (networkStatus != NewNotReachable) {
         [self initConch];
     }
 }

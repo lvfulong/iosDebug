@@ -51,16 +51,16 @@
 
 
 typedef enum : NSInteger {
-	NotReachable = 0,
-	ReachableViaWiFi,
-	ReachableViaWWAN
-} LayaNetworkStatus;
+	NewNotReachable = 0,
+	NewReachableViaWiFi,
+	NewReachableViaWWAN
+} NewLayaNetworkStatus;
 
 
-extern NSString *LayakReachabilityChangedNotification;
+extern NSString *NewLayakReachabilityChangedNotification;
 
 
-@interface LayaReachability : NSObject
+@interface NewReachability : NSObject
 
 /*!
  * Use to check the reachability of a given host name.
@@ -88,7 +88,7 @@ extern NSString *LayakReachabilityChangedNotification;
 - (BOOL)startNotifier;
 - (void)stopNotifier;
 
-- (LayaNetworkStatus)currentReachabilityStatus;
+- (NewLayaNetworkStatus)currentReachabilityStatus;
 
 /*!
  * WWAN may be available, but not active until a connection has been established. WiFi may require a connection for VPN on Demand.
@@ -96,5 +96,4 @@ extern NSString *LayakReachabilityChangedNotification;
 - (BOOL)connectionRequired;
 
 @end
-
 

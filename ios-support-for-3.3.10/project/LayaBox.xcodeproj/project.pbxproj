@@ -17,6 +17,7 @@
 		8A77FD0C2DE80F910002B71E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2460A8B1C8DB4370032CD8D /* libsqlite3.tbd */; };
 		8AB91D7E2C4E0C360093E491 /* HandleMessageUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8AB91D7C2C4E0C360093E491 /* HandleMessageUtils.mm */; };
 		8AC6E3602A28B7EC00CCB117 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AC6E3622A28B7EC00CCB117 /* Localizable.strings */; };
+		8AF000012DE8123400000001 /* NewReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF000022DE8123400000001 /* NewReachability.m */; };
 		8AF2AAFE2959716A009F77F8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF2AAFD2959716A009F77F8 /* CoreMedia.framework */; };
 		8AF2AB002959718A009F77F8 /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF2AAFF2959718A009F77F8 /* CoreHaptics.framework */; };
 		A208134C1D7439E6008ABB72 /* cache in Resources */ = {isa = PBXBuildFile; fileRef = A20813431D7439E6008ABB72 /* cache */; };
@@ -78,6 +79,8 @@
 		8AB91D7D2C4E0C360093E491 /* HandleMessageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleMessageUtils.h; sourceTree = "<group>"; };
 		8AC6E3612A28B7EC00CCB117 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8AC6E3652A28B89300CCB117 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8AF000022DE8123400000001 /* NewReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewReachability.m; sourceTree = "<group>"; };
+		8AF000032DE8123400000001 /* NewReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewReachability.h; sourceTree = "<group>"; };
 		8AF2AAFD2959716A009F77F8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		8AF2AAFF2959718A009F77F8 /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreHaptics.framework; path = System/Library/Frameworks/CoreHaptics.framework; sourceTree = SDKROOT; };
 		A20813431D7439E6008ABB72 /* cache */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cache; path = resource/cache; sourceTree = "<group>"; };
@@ -226,6 +229,7 @@
 		A2460A1E1C8DAF710032CD8D /* LayaBox */ = {
 			isa = PBXGroup;
 			children = (
+				8AF000042DE8123400000001 /* NewReachability */,
 				8A19A9312EBF3B880089E673 /* SceneDelegate.h */,
 				8A19A9322EBF3B880089E673 /* SceneDelegate.mm */,
 				8AB91D7D2C4E0C360093E491 /* HandleMessageUtils.h */,
@@ -245,6 +249,15 @@
 				24B8AD7A20EC6D37004EDAEF /* LaunchView.m */,
 			);
 			path = LayaBox;
+			sourceTree = "<group>";
+		};
+		8AF000042DE8123400000001 /* NewReachability */ = {
+			isa = PBXGroup;
+			children = (
+				8AF000032DE8123400000001 /* NewReachability.h */,
+				8AF000022DE8123400000001 /* NewReachability.m */,
+			);
+			path = NewReachability;
 			sourceTree = "<group>";
 		};
 		A2460A1F1C8DAF710032CD8D /* Supporting Files */ = {
@@ -431,6 +444,7 @@
 				24B8AD7B20EC6D37004EDAEF /* LaunchView.m in Sources */,
 				A2460A241C8DAF710032CD8D /* AppDelegate.mm in Sources */,
 				24B1796F20E4F17100AF57C9 /* JSBridge.mm in Sources */,
+				8AF000012DE8123400000001 /* NewReachability.m in Sources */,
 				A2460A211C8DAF710032CD8D /* main.m in Sources */,
 				8AB91D7E2C4E0C360093E491 /* HandleMessageUtils.mm in Sources */,
 			);
